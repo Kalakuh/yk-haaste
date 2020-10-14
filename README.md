@@ -1,1 +1,3 @@
-A web application for creating polls
+# YK-haaste
+
+Verkkosivu yhteydettömien kielioppien harjoitteluun
