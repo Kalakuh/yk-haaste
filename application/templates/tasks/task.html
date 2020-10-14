@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<p>
+	<div class="wrap">
+		<h2 class="wrap">{{ task.title }}</h2>
+		<hr>
+		<p>{{ task.description }}</p>
+		<p>Esimerkkejä merkkijonoista, jotka kieliopista pitää voida johtaa:</p>
+		<ul>
+			{% for sample in valid %}
+				<li>{{ sample }}</li>
+			{% endfor %}
+		</ul>
+		<p>Esimerkkejä merkkijonoista, joita kieliopista ei pidä voida johtaa:</p>
+		<ul>
+			{% for sample in invalid %}
+				<li>{{ sample }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<form method="POST" action="{{ url_for('handle_task', task_id=task.id) }}">
+		Kielioppi:<br>
+		<textarea name="grammar" rows=10 style="width: 100%;"></textarea>
+		<input class="jbtn ui-button ui-widget ui-state-default ui-corner-all" type="submit" value="Tarkista">
+	</form>
+</p>
+{% endblock %}

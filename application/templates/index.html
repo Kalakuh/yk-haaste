@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<p>
+	<h2>Tehtävälista</h2>
+
+	{% for task in tasks %}
+		<a href="/task/{{ task.id }}/"><h4>{{ task.title }}</h4></a>
+	{% endfor %}
+</p>
+{% endblock %}

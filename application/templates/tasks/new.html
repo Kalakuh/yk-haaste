@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<p>
+	<h2>Luo uusi tehtävä</h2>
+	
+	<form method="POST" action="{{ url_for('new_task') }}">
+		Otsikko: <input name="title" type=text><br>
+		Kuvaus:<br>
+		<textarea name="desc" style="width: 100%"></textarea>
+		Testit:<br>
+		<textarea name="tests" style="width: 100%"></textarea>
+		<input class="jbtn ui-button ui-widget ui-state-default ui-corner-all" type="submit" value="Luo tehtävä">
+	</form>
+</p>
+{% endblock %}
